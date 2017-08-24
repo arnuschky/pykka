@@ -58,7 +58,7 @@ class GeventFuture(Future):
         else:
             exc_info = exc_info or sys.exc_info()
             exception = exc_info[1]
-        self.async_result.set_exception(exception)
+        self.async_result.set_exception(exception, exc_info=exc_info)
 
 
 class GeventActor(Actor):
